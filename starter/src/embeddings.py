@@ -1,29 +1,25 @@
-"""Choose a real embedding provider (API or local) and implement this contract."""
+"""Real local embedding adapter. Provider errors propagate without fallback."""
 from typing import Protocol
 
 
 class Embedder(Protocol):
     model_name: str
     dimensions: int
-
-    def embed_documents(self, texts: list[str]) -> list[list[float]]:
-        """Return one vector per input text, in the same order."""
-        ...
-
-    def embed_query(self, question: str) -> list[float]:
-        """Return a query vector compatible with the stored document vectors."""
-        ...
+    def embed_documents(self, texts: list[str]) -> list[list[float]]: ...
+    def embed_query(self, question: str) -> list[float]: ...
 
 
 class MyEmbedder:
-    """TODO: implement a provider adapter; do not silently fall back to mock vectors."""
-
-    def __init__(self, model_name: str) -> None:
+    def __init__(self, model_name: str, revision=None, cache_folder=None):
+        from sentence_transformers import SentenceTransformer
         self.model_name = model_name
-        raise NotImplementedError("TODO: initialize real embedder and dimensions")
+        self.model = SentenceTransformer(model_name, revision=revision, cache_folder=cache_folder, device="cpu")
+        self.dimensions = self.model.get_sentence_embedding_dimension()
 
-    def embed_documents(self, texts: list[str]) -> list[list[float]]:
-        raise NotImplementedError("TODO: embed_documents")
+    def embed_documents(self, texts):
+        if not texts:
+            return []
+        return self.model.encode(texts, batch_size=32, normalize_embeddings=True, show_progress_bar=True).tolist()
 
-    def embed_query(self, question: str) -> list[float]:
-        raise NotImplementedError("TODO: embed_query")
+    def embed_query(self, question):
+        return self.embed_documents([question])[0]

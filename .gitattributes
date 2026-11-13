@@ -1,0 +1,6 @@
+* text=auto
+# Preserve hashed inputs byte-for-byte on every platform.
+data/raw/alice.txt -text
+data/pages.jsonl -text
+benchmark/questions.jsonl -text
+configs/strategies.json -text

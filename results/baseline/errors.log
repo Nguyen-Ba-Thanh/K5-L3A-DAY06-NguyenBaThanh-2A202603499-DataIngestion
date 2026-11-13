@@ -1,0 +1,2 @@
+INFO:datasets:JAX version 0.6.2 available.
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: D:\VinUni\Lab6\K5-L3A-DAY06-NguyenBaThanh-2A202603499-DataIngestion\.cache\huggingface\hub\models--sentence-transformers--all-MiniLM-L6-v2\snapshots\c9745ed1d9f207416be6d2e6f8de32d1f16199bf

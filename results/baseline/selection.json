@@ -1,0 +1,35 @@
+{
+  "selected_strategy": "C",
+  "selected_at": "2026-11-13T11:13:58.821406+00:00",
+  "criterion": "Dev Hit@3 descending, then dev Hit@1 descending, then fewer chunks, then strategy name. Freeze before test. No test-driven tuning.",
+  "dev_metrics": [
+    {
+      "strategy": "A",
+      "split": "dev",
+      "n": 15,
+      "hit1_count": 5,
+      "hit3_count": 7,
+      "hit1": 0.3333333333333333,
+      "hit3": 0.4666666666666667
+    },
+    {
+      "strategy": "B",
+      "split": "dev",
+      "n": 15,
+      "hit1_count": 7,
+      "hit3_count": 12,
+      "hit1": 0.4666666666666667,
+      "hit3": 0.8
+    },
+    {
+      "strategy": "C",
+      "split": "dev",
+      "n": 15,
+      "hit1_count": 7,
+      "hit3_count": 13,
+      "hit1": 0.4666666666666667,
+      "hit3": 0.8666666666666667
+    }
+  ],
+  "test_evaluated_at_selection": false
+}

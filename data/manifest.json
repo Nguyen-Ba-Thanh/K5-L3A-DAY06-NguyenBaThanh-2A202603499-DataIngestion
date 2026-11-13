@@ -1,0 +1,554 @@
+{
+  "source_id": "alice-11",
+  "title": "Alice’s Adventures in Wonderland",
+  "author": "Lewis Carroll (1832–1898)",
+  "source_path_or_url": "https://www.gutenberg.org/ebooks/11.txt.utf-8",
+  "local_path": "data/raw/alice.txt",
+  "license_or_permission": "Public domain literary text; Project Gutenberg redistribution terms retained in original file. Author died 1898. No modern illustrations included.",
+  "license_url": "https://www.gutenberg.org/policy/license.html",
+  "catalog_url": "https://www.gutenberg.org/ebooks/11",
+  "accessed_at": "2026-11-13T11:12:51.900270+00:00",
+  "snapshot": "Gutenberg edition last updated 2025-06-26; exact bytes hashed below",
+  "raw_sha256": "01b38ea4c710a84bc18d0bd41271a5a1a92b94e97b2812f4dece97d4a694725e",
+  "physical_pages": null,
+  "counting_rule": "Chapter text only, front matter/TOC/license excluded from retrieval. Sequential whole-paragraph units targeting 1800 chars, final remainder merged within chapter; every unit >=1500 NFC normalized chars. page is synthetic source-unit ID, NOT a printed page.",
+  "content_units": 67,
+  "units": [
+    {
+      "page": 1,
+      "chapter": 1,
+      "start": 0,
+      "end": 2383,
+      "characters": 2383,
+      "sha256": "67f121377f6c9ff23735d64f193adb3f99e1bb70bed29cd7dbf002f732c1c61f"
+    },
+    {
+      "page": 2,
+      "chapter": 1,
+      "start": 2385,
+      "end": 5020,
+      "characters": 2635,
+      "sha256": "202929e3a3814feaa8126364a7b751d0fd841da2aa605d2212547a476de21730"
+    },
+    {
+      "page": 3,
+      "chapter": 1,
+      "start": 5022,
+      "end": 7111,
+      "characters": 2089,
+      "sha256": "c9bb5a546a727c744f634490d8983018b712a5dde28514289dc997b1991d3fe2"
+    },
+    {
+      "page": 4,
+      "chapter": 1,
+      "start": 7113,
+      "end": 9228,
+      "characters": 2115,
+      "sha256": "3ce97ef1e12ce7cced1018ff5430bcf9e85e75b948993ff17cb10dc68dad88a6"
+    },
+    {
+      "page": 5,
+      "chapter": 1,
+      "start": 9230,
+      "end": 11338,
+      "characters": 2108,
+      "sha256": "a8be831af38dfc27755fcec76377b921733e9f2a3bca4926f9cfaff0a77b9b99"
+    },
+    {
+      "page": 6,
+      "chapter": 2,
+      "start": 0,
+      "end": 2437,
+      "characters": 2437,
+      "sha256": "2a52ebe701f40f5809c74f21e657401e356ca3268d42eb2bf6095e03fbdfd471"
+    },
+    {
+      "page": 7,
+      "chapter": 2,
+      "start": 2439,
+      "end": 4987,
+      "characters": 2548,
+      "sha256": "025025f92bb68fa5d0555e4ab4563eaf1dae4196eb3d08c32fcd1f934c4f9d85"
+    },
+    {
+      "page": 8,
+      "chapter": 2,
+      "start": 4989,
+      "end": 6921,
+      "characters": 1932,
+      "sha256": "a95fc470d51e68524e6ad7c409fc4f5a5503b3adb528f9bdaf6e0a9eccde2404"
+    },
+    {
+      "page": 9,
+      "chapter": 2,
+      "start": 6923,
+      "end": 10894,
+      "characters": 3971,
+      "sha256": "92912279d2167d69c06bf58c990b770ecefcee7cdae7340c95bd543da5b92a93"
+    },
+    {
+      "page": 10,
+      "chapter": 3,
+      "start": 0,
+      "end": 1813,
+      "characters": 1813,
+      "sha256": "8c223165d5fa7bbf7f90091ee9ed46c88bb0a710021ffb3e59b5c9c1058897fc"
+    },
+    {
+      "page": 11,
+      "chapter": 3,
+      "start": 1815,
+      "end": 3911,
+      "characters": 2096,
+      "sha256": "1d4d4e42279faa4ab565a2a5d039aea16c026d365b98ddf2bf626e3e198bcb90"
+    },
+    {
+      "page": 12,
+      "chapter": 3,
+      "start": 3913,
+      "end": 5714,
+      "characters": 1801,
+      "sha256": "d24b160b77f764985cf191aa5ded19f679830703631c99b07bbeb5b272041466"
+    },
+    {
+      "page": 13,
+      "chapter": 3,
+      "start": 5716,
+      "end": 9153,
+      "characters": 3437,
+      "sha256": "9a9d4edce4e299bd8acdd293347599d0094a4d9dba8741a52564e7be55705d75"
+    },
+    {
+      "page": 14,
+      "chapter": 4,
+      "start": 0,
+      "end": 2000,
+      "characters": 2000,
+      "sha256": "6b0027d9ecf061a0e6576475a6c81d0898366a5463a2d7462d86b1d0735e20c1"
+    },
+    {
+      "page": 15,
+      "chapter": 4,
+      "start": 2002,
+      "end": 3807,
+      "characters": 1805,
+      "sha256": "3c1a01a0747bdddae18896d6887e73d8a5be98bceed83361d35689ffe40eac87"
+    },
+    {
+      "page": 16,
+      "chapter": 4,
+      "start": 3809,
+      "end": 5983,
+      "characters": 2174,
+      "sha256": "ecbfc715b61f164c3570aecd21008335863b06446bc3482ab3610909cab957ac"
+    },
+    {
+      "page": 17,
+      "chapter": 4,
+      "start": 5985,
+      "end": 7913,
+      "characters": 1928,
+      "sha256": "fa2d08be457b2a5f15ff0a147853580244828ac8c110d5542feaced0aa8d11c2"
+    },
+    {
+      "page": 18,
+      "chapter": 4,
+      "start": 7915,
+      "end": 9814,
+      "characters": 1899,
+      "sha256": "af25bcb7e9e0830cb7492590fdb09d0162f94c3bb32585addb078db8c50c3349"
+    },
+    {
+      "page": 19,
+      "chapter": 4,
+      "start": 9816,
+      "end": 13836,
+      "characters": 4020,
+      "sha256": "31b40540d3223daba5b05297307bfbb745621eaeab9479d93736709f2fe6bb69"
+    },
+    {
+      "page": 20,
+      "chapter": 5,
+      "start": 0,
+      "end": 1872,
+      "characters": 1872,
+      "sha256": "b7a515941badac9a1a29325df961c5ac840ea4a8936efac89ad70cbf9a7c7b4d"
+    },
+    {
+      "page": 21,
+      "chapter": 5,
+      "start": 1874,
+      "end": 3689,
+      "characters": 1815,
+      "sha256": "a78235ed3943ec096b2381f56f597d7e30c4e038afbbdbdf2f6b4760f3acdf23"
+    },
+    {
+      "page": 22,
+      "chapter": 5,
+      "start": 3691,
+      "end": 5785,
+      "characters": 2094,
+      "sha256": "6666f2cc0a7b6c2b4b285d697702e19749818de37f23b39546876d4c570bc0e0"
+    },
+    {
+      "page": 23,
+      "chapter": 5,
+      "start": 5787,
+      "end": 8041,
+      "characters": 2254,
+      "sha256": "86d6de31f69126c44170c2652e534151fbb4d17c2a3765bbf07db65d56e9fb43"
+    },
+    {
+      "page": 24,
+      "chapter": 5,
+      "start": 8043,
+      "end": 9887,
+      "characters": 1844,
+      "sha256": "f17b4344b7742c5988709ed3a203fc03f36b2ff9edee6e6dc5e7e54d25babf41"
+    },
+    {
+      "page": 25,
+      "chapter": 5,
+      "start": 9889,
+      "end": 11817,
+      "characters": 1928,
+      "sha256": "5e04376714e7daba07ab7a8cf05768219cc02b1e94414948ceef18fcfe0bfe1d"
+    },
+    {
+      "page": 26,
+      "chapter": 6,
+      "start": 0,
+      "end": 1834,
+      "characters": 1834,
+      "sha256": "78f78fc50d14a4eb785f99b68278f45c554c9da19ad4b404fbd8a15b33a3e74b"
+    },
+    {
+      "page": 27,
+      "chapter": 6,
+      "start": 1836,
+      "end": 3675,
+      "characters": 1839,
+      "sha256": "f7b44dfeb39a223c73d3344f5933dca6899300be33d24f9673f536b607a2c85e"
+    },
+    {
+      "page": 28,
+      "chapter": 6,
+      "start": 3677,
+      "end": 5644,
+      "characters": 1967,
+      "sha256": "f60d7a3bad7c1203073b857db7b61534f6f6f51300b404f8424ab1feab9ea6d0"
+    },
+    {
+      "page": 29,
+      "chapter": 6,
+      "start": 5646,
+      "end": 7764,
+      "characters": 2118,
+      "sha256": "51095c6c3ced910b8ace76b427007e0c04ab4b604664dc29588b170369584e58"
+    },
+    {
+      "page": 30,
+      "chapter": 6,
+      "start": 7766,
+      "end": 9915,
+      "characters": 2149,
+      "sha256": "ed837ccf3c9ce6ebb96330d54b18c9b4c31c3131aff3d986f7778625ceb8f6e6"
+    },
+    {
+      "page": 31,
+      "chapter": 6,
+      "start": 9917,
+      "end": 11766,
+      "characters": 1849,
+      "sha256": "04a359b5d70b72bd65e8572598a5bbe820d7228a9f4671e23e108b92fb9cc982"
+    },
+    {
+      "page": 32,
+      "chapter": 6,
+      "start": 11768,
+      "end": 13793,
+      "characters": 2025,
+      "sha256": "84703b6faa2744eaf26698371ca839178cfa0bda7325e7ef73f3ee15403e0153"
+    },
+    {
+      "page": 33,
+      "chapter": 7,
+      "start": 0,
+      "end": 1879,
+      "characters": 1879,
+      "sha256": "fbd72eb413fcb7831c9da8afb9496cabecb455dff8d2994768c8586f0505a6fe"
+    },
+    {
+      "page": 34,
+      "chapter": 7,
+      "start": 1881,
+      "end": 3742,
+      "characters": 1861,
+      "sha256": "e484c5918dc8dd39119ae7ceaab20755d7907e5d153e124b2b0a191ee5df4d98"
+    },
+    {
+      "page": 35,
+      "chapter": 7,
+      "start": 3744,
+      "end": 5608,
+      "characters": 1864,
+      "sha256": "7b035e1a6c299d780987326cf89ee4b7d73ea44e0d71bff2743f4101fbaa0d45"
+    },
+    {
+      "page": 36,
+      "chapter": 7,
+      "start": 5610,
+      "end": 7419,
+      "characters": 1809,
+      "sha256": "f36134b5c44d928aff6bfb02e7f40f3729301256b70e2a828123feb7f4d4afdc"
+    },
+    {
+      "page": 37,
+      "chapter": 7,
+      "start": 7421,
+      "end": 9294,
+      "characters": 1873,
+      "sha256": "fb564c7690cef51b973c5c3e33e767053fc25555af122698513dffd5368c992c"
+    },
+    {
+      "page": 38,
+      "chapter": 7,
+      "start": 9296,
+      "end": 12650,
+      "characters": 3354,
+      "sha256": "cfbfa93a86153859223fc7caa8183e7d937c095ef496421665ac9d1f9a6da440"
+    },
+    {
+      "page": 39,
+      "chapter": 8,
+      "start": 0,
+      "end": 2599,
+      "characters": 2599,
+      "sha256": "d6b984af7834525626a73d4f1671b2d50b669870f45cdf87c89e64fd864f5265"
+    },
+    {
+      "page": 40,
+      "chapter": 8,
+      "start": 2601,
+      "end": 4498,
+      "characters": 1897,
+      "sha256": "ae198e508bc99dd79b77a76007ebdab04e34b718da0c70d1fc87cc0ab1ca2a5c"
+    },
+    {
+      "page": 41,
+      "chapter": 8,
+      "start": 4500,
+      "end": 6418,
+      "characters": 1918,
+      "sha256": "6636125ea7f406c8adb56213a42c5536042ee8d6fbe0ba7dee35c000ae7c3621"
+    },
+    {
+      "page": 42,
+      "chapter": 8,
+      "start": 6420,
+      "end": 8393,
+      "characters": 1973,
+      "sha256": "49976fd2485a24f88aacac310e457b8d210368e44a27140aa0a00738445a7c1e"
+    },
+    {
+      "page": 43,
+      "chapter": 8,
+      "start": 8395,
+      "end": 10264,
+      "characters": 1869,
+      "sha256": "92190f06dd89d02a2a68ee8074ed2ff566dfbb7d937ec0cae04242fba5b802f2"
+    },
+    {
+      "page": 44,
+      "chapter": 8,
+      "start": 10266,
+      "end": 13627,
+      "characters": 3361,
+      "sha256": "f429e356893dad01be324cc5ef8fdb35b74f74e7e5a3e64b42f7d2ec3c1b7753"
+    },
+    {
+      "page": 45,
+      "chapter": 9,
+      "start": 0,
+      "end": 1875,
+      "characters": 1875,
+      "sha256": "80ed5f30c2ff353c37a7a7f95d0387123d7c92648e579d1dfafaae75bf940bd5"
+    },
+    {
+      "page": 46,
+      "chapter": 9,
+      "start": 1877,
+      "end": 3710,
+      "characters": 1833,
+      "sha256": "234c894f7c3eea99e92261633a0bc23c854e97c4fb71e612510d018ec5f573d0"
+    },
+    {
+      "page": 47,
+      "chapter": 9,
+      "start": 3712,
+      "end": 5813,
+      "characters": 2101,
+      "sha256": "68f3ad2b20938ab757948e9ed7866be0ca92f916efbefc1d2d902729d621cff1"
+    },
+    {
+      "page": 48,
+      "chapter": 9,
+      "start": 5815,
+      "end": 7806,
+      "characters": 1991,
+      "sha256": "ded441cae174cb4a9d5a0b1e5c2c2bd143d068acbfadb2d688bc1646b881c9f7"
+    },
+    {
+      "page": 49,
+      "chapter": 9,
+      "start": 7808,
+      "end": 9679,
+      "characters": 1871,
+      "sha256": "9984cb8ef0cc420a2a432269a1f41d44749a06a114d5becc9e00e38c5b68f64a"
+    },
+    {
+      "page": 50,
+      "chapter": 9,
+      "start": 9681,
+      "end": 12593,
+      "characters": 2912,
+      "sha256": "c9f4fc5e33c463213335e0f22e19f4e863e92a9a8337e1128c8c3a93761b8d4d"
+    },
+    {
+      "page": 51,
+      "chapter": 10,
+      "start": 0,
+      "end": 1835,
+      "characters": 1835,
+      "sha256": "f5e079a6ddddf99ce9eb07cad7e7b1589fab90e3ad3e59e74ced480d9fb64cb3"
+    },
+    {
+      "page": 52,
+      "chapter": 10,
+      "start": 1837,
+      "end": 3731,
+      "characters": 1894,
+      "sha256": "fb3629d7bedfb4b17c5a20a92e4e98782138a3ba8dc3d7bd00690e1ac4fed7c0"
+    },
+    {
+      "page": 53,
+      "chapter": 10,
+      "start": 3733,
+      "end": 5584,
+      "characters": 1851,
+      "sha256": "d64f8e2b9a78236f52aa510683a5df5ad2185dbdc0b6a1e37306b6ccf656b364"
+    },
+    {
+      "page": 54,
+      "chapter": 10,
+      "start": 5586,
+      "end": 7407,
+      "characters": 1821,
+      "sha256": "fe4497226848bc09291925ed4d93cf4c27bacd754b88a19f68091ff1a9feb0f2"
+    },
+    {
+      "page": 55,
+      "chapter": 10,
+      "start": 7409,
+      "end": 9232,
+      "characters": 1823,
+      "sha256": "fda1ea91682442ceeb84da06a63e005574f5952c3199aa08ca1d7eaeed99d467"
+    },
+    {
+      "page": 56,
+      "chapter": 10,
+      "start": 9234,
+      "end": 11344,
+      "characters": 2110,
+      "sha256": "c8e6c05496fb61d223f70d4d0d0f4851bed64549c56f4b89a8f2d5c86c8b5d41"
+    },
+    {
+      "page": 57,
+      "chapter": 11,
+      "start": 0,
+      "end": 1816,
+      "characters": 1816,
+      "sha256": "5a2f9d0b5dfc02825b729ca8f240a4fb10fe4ccc8ca366d1f211f11b58aeeb25"
+    },
+    {
+      "page": 58,
+      "chapter": 11,
+      "start": 1818,
+      "end": 3836,
+      "characters": 2018,
+      "sha256": "15e1d5a8fec3dda14ba4f49ee6e2f44229a0e72eb7b3c02c74303f770c501355"
+    },
+    {
+      "page": 59,
+      "chapter": 11,
+      "start": 3838,
+      "end": 5805,
+      "characters": 1967,
+      "sha256": "cba5bedb829f3f609c42e35ae0ff0b7fcc5d984848102824fedc7fff2a21f42c"
+    },
+    {
+      "page": 60,
+      "chapter": 11,
+      "start": 5807,
+      "end": 7801,
+      "characters": 1994,
+      "sha256": "10183fe4ba44964252aafe2ae973e9a658231df6067893217caa34b83d3836b7"
+    },
+    {
+      "page": 61,
+      "chapter": 11,
+      "start": 7803,
+      "end": 10343,
+      "characters": 2540,
+      "sha256": "909b783a472ba2d985a17993a1ca610f8402a7b55f1ea0e5d88089e562c29a3e"
+    },
+    {
+      "page": 62,
+      "chapter": 12,
+      "start": 0,
+      "end": 1804,
+      "characters": 1804,
+      "sha256": "66cbbe0c42e6736f1ab63bbeb9b57a6e253c43bc36c1a5323132f3c1fff2cbda"
+    },
+    {
+      "page": 63,
+      "chapter": 12,
+      "start": 1806,
+      "end": 3632,
+      "characters": 1826,
+      "sha256": "40a8ea297584dfe2faf149379ebd004233bd7945ce5a2a08a535cb935636055c"
+    },
+    {
+      "page": 64,
+      "chapter": 12,
+      "start": 3634,
+      "end": 5532,
+      "characters": 1898,
+      "sha256": "261dc2d8e72ad116d6e7e07a033330cd521ba2deb3b84579d8bb411d303a1cdd"
+    },
+    {
+      "page": 65,
+      "chapter": 12,
+      "start": 5534,
+      "end": 7477,
+      "characters": 1943,
+      "sha256": "78037ab0dab9b6d88b42dbbb6ed6f68aee6801978e4064c9d6fd82167d4833f4"
+    },
+    {
+      "page": 66,
+      "chapter": 12,
+      "start": 7479,
+      "end": 9284,
+      "characters": 1805,
+      "sha256": "3aad2e9e880969e57495729a823c3453b2cdf6f9b9bb8c6f13c59d2df3d1980d"
+    },
+    {
+      "page": 67,
+      "chapter": 12,
+      "start": 9286,
+      "end": 11572,
+      "characters": 2286,
+      "sha256": "d104cc96721fc1737df7b91d90638dd5d37199b1fbd1af45e706b45c473ade31"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+  "A": {"chunking": "fixed", "size": 500, "overlap": 50, "filter": false},
+  "B": {"chunking": "paragraph", "size": 900, "overlap": 0, "filter": false},
+  "C": {"chunking": "paragraph", "size": 900, "overlap": 0, "filter": true},
+  "selection": "Dev Hit@3 descending, then dev Hit@1 descending, then fewer chunks, then strategy name. Freeze before test. No test-driven tuning."
+}

@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-11-13T11:22:32.166809+00:00",
+  "tests_exit_code": 0,
+  "tests": 6,
+  "metrics_reproduced": true,
+  "top3_ids_and_evidence_hits_reproduced": true,
+  "baseline_directory": "results/baseline",
+  "reproduction_run": "results/runs/20261113T112123223170Z",
+  "source_hashes": {
+    "starter/src/audit.py": "8db836cd9e03d76fabc2ebc51a186b9d8ba77156ba7cb16b7c4d87eefdf8df5e",
+    "starter/src/chunking.py": "63f800e823a40830274b84508492c8eb726d4335fccd9eeb3dcf8d9bab9e2570",
+    "starter/src/embeddings.py": "6f0e9d39a6aa92d0114e304c4e99db49af4873f4be742b3323b3e2967df2ba5d",
+    "starter/src/evaluation.py": "ba10d84b1f42746c25c20d8737158eda51f705505b951bdde315fa0332e337ab",
+    "starter/src/ingestion.py": "09e2b26ba469cb38d6d82893b85cb6a142486694e107098cba90bd1f1b9ee9d6",
+    "starter/src/models.py": "9f26a14cd6139c7b608df067894274308ae7b5c2c2ccd10566079c345fae1710",
+    "starter/src/prepare.py": "04f999e3cb61fb89c3c797a6014976453055c2b87d94042507a7b5c72c34caf3",
+    "starter/src/run.py": "2cf18eb19cbae5b8d1e5429bd579a99b978ee737c0ba25e20681db81c7dd417d",
+    "starter/src/store.py": "3c00353a34bad7debda83b98a947cfd5829c25c0768e3f6058a4ef6890aa359c",
+    "starter/src/__init__.py": "8640f93122807bf5a4a9df39ce6628b61c1446311e8d9143b02af2ee2f1991ee"
+  },
+  "human_audit": "pending; AI review separate",
+  "paid_api_cost_usd": 0
+}

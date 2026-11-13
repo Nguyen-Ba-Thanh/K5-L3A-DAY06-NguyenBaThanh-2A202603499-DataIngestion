@@ -1,16 +1,32 @@
-"""TODO: evaluate retrieved evidence and preserve per-query traces."""
-from typing import Any
+"""Strict single-chunk evidence metrics, separate from manual labels."""
+from collections import defaultdict
+from .ingestion import normalize_text
 
 
-def evaluate_query(question: dict[str, Any], hits: list[dict[str, Any]]) -> dict[str, Any]:
-    """TODO: check source/page and enough gold evidence; keep hit@1 and hit@3 trace.
-
-    Accept any documented alternative gold evidence. Do not infer human grounding
-    or chunk coherence labels from exact string match.
-    """
-    raise NotImplementedError("TODO: evaluate_query")
+def evidence_key(text):
+    return " ".join(normalize_text(text).split())
 
 
-def summarize(traces: list[dict[str, Any]]) -> dict[str, Any]:
-    """TODO: aggregate Hit@1 and Evidence Hit@3 by strategy and dev/test split."""
-    raise NotImplementedError("TODO: summarize")
+def golds(question):
+    return [{"source_id": question["gold_source_id"], "page": question["gold_page"],
+             "evidence_quote": question["evidence_quote"]}, *question.get("alternative_gold", [])]
+
+
+def evaluate_query(question, hits):
+    checks = [any(hit["metadata"]["document_id"] == g["source_id"]
+                  and hit["metadata"]["page"] == g["page"]
+                  and evidence_key(g["evidence_quote"]) in evidence_key(hit["text"])
+                  for g in golds(question)) for hit in hits[:3]]
+    return {**question, "hits": hits[:3], "evidence_hits": checks,
+            "hit1": bool(checks and checks[0]), "hit3": any(checks)}
+
+
+def summarize(traces):
+    groups = defaultdict(list)
+    for trace in traces:
+        groups[(trace["strategy"], trace["split"])].append(trace)
+    return [{"strategy": s, "split": split, "n": len(rows),
+             "hit1_count": sum(r["hit1"] for r in rows), "hit3_count": sum(r["hit3"] for r in rows),
+             "hit1": sum(r["hit1"] for r in rows) / len(rows),
+             "hit3": sum(r["hit3"] for r in rows) / len(rows)}
+            for (s, split), rows in sorted(groups.items())]

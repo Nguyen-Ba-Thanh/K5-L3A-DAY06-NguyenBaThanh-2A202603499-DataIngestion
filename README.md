@@ -1,47 +1,48 @@
-# Day 06 · Data Ingestion Engineering
+# Day 06 · Data Ingestion Engineering — Nguyễn Bá Thành
 
-**Lab cá nhân** · **4 giờ** · **Dữ liệu tự chọn**
+Pipeline so sánh ba chiến lược truy xuất bằng chứng trên Alice’s Adventures in Wonderland. Corpus có 67 đơn vị nguồn ≥1.500 ký tự, benchmark 20 câu (15 dev / 5 test), embedding thật 384 chiều và Qdrant lưu bền vững. Không cần Docker hoặc API key.
 
-Biến tài liệu thành kho tri thức có thể truy xuất cho AI agent, rồi đo xem cách chuẩn bị dữ liệu nào hiệu quả nhất.
+## Cài đặt và chạy từ root repo
 
-| 📄 Dữ liệu | 🧩 Chiến lược | 🎯 Benchmark |
-|---|---|---|
-| Tối thiểu **30 trang nội dung** | Tối thiểu **3 cấu hình** | Tối thiểu **20 câu hỏi** |
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r starter/requirements.txt
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe -m starter.src.run --validate-only
+.\.venv\Scripts\python.exe -m starter.src.run
+```
 
-## Bắt đầu nhanh
+Lần đầu cần mạng tải thư viện/model. Sau khi có cache, chạy thêm --offline. Linux/macOS dùng python3 và .venv/bin/python. Đã kiểm chứng trên Windows, Python 3.10.1, CPU; môi trường đầy đủ ở results/baseline/environment.json. Model ghim revision trong configs/strategies.json, cache ở .cache/huggingface/. Không gửi corpus lên API.
 
-Dùng [starter PostgreSQL + pgvector](starter/README.md) để dựng database và hoàn thiện các hàm TODO, hoặc tự chọn vector store tương đương. Starter chỉ là khung: **bạn tự hiện thực pipeline và benchmark**.
+## Kết quả thực tế
 
-## 1. Xây pipeline
+| Chiến lược | Dev Hit@1 | Dev Hit@3 | Test Hit@1 | Test Hit@3 | Chunks |
+|---|---|---|---|---|---|
+| A: fixed 500/overlap 50 | 5/15 | 7/15 | 1/5 | 2/5 | 343 |
+| B: đoạn tối đa 900 | 7/15 | 12/15 | 2/5 | 4/5 | 222 |
+| C: B + filter chương | 7/15 | 13/15 | 2/5 | 5/5 | 222 |
 
-![Đọc tài liệu, chuẩn hóa, chia chunk, tạo vector, lưu và kiểm tra](assets/ingestion-pipeline.svg)
+Cùng model all-MiniLM-L6-v2, cosine exact search và top-3. Chọn C theo dev trước truy xuất test. Không chỉnh cấu hình theo test. Chỉ 5 câu test nên không kết luận ưu thế tổng quát. API cost 0 USD; không tính điện/phần cứng.
 
-Chọn tài liệu được phép sử dụng; giữ **ID tài liệu, nguồn, trang/vị trí** và metadata phù hợp. Dùng embedding model thật qua API hoặc chạy local; lưu và truy xuất bằng pgvector, Qdrant, Chroma hoặc một store tương đương.
+## Tài liệu bài nộp
 
-## 2. So sánh và đánh giá
+- [Thông tin học viên](STUDENT.md).
+- [Dữ liệu và quyền sử dụng](data/README.md), [manifest](data/manifest.json).
+- [Benchmark](benchmark/README.md), [cấu hình](configs/strategies.json).
+- [Kết quả và audit](results/README.md), [nhật ký](artifacts/experiment_log.csv).
+- [Báo cáo cá nhân](report/individual/2A202603499_NguyenBaThanh.md).
+- [Hướng dẫn đề bài](GUIDE.md), [quy tắc](RULES.md), [benchmark bắt buộc](BENCHMARK.md), [rubric](RUBRIC.md), [checklist nộp](SUBMISSION.md).
 
-![Ba chiến lược được đánh giá trên cùng corpus và benchmark dev/test](assets/benchmark-workflow.svg)
+Mỗi lần chạy tạo results/runs/<timestamp>/ và cập nhật results/latest.json; baseline/ lưu lần chạy đầu để nộp. Model cache, .venv và .qdrant không commit. Kho vector được dựng lại khi chạy pipeline. Nạp lại thay toàn bộ snapshot, loại chunk cũ; đã kiểm tra count và mở lại kho. Thay snapshot không crash-atomic: nếu gián đoạn, chạy lại ingest. Lỗi có errors.log/failure.json, không fallback vector giả.
 
-Dùng cùng dữ liệu, model và câu hỏi cho cả ba cấu hình. Tách **15 câu dev / 5 câu test** trước khi chạy; chọn cấu hình trên dev, rồi đánh giá test sau khi cố định. Mỗi câu hỏi cần có đoạn bằng chứng và trang nguồn; thiết kế bộ câu hỏi và đánh giá theo [BENCHMARK.md](BENCHMARK.md).
+## Việc học viên cần hoàn tất
 
-Đánh giá theo năm khía cạnh: **độ chính xác truy xuất**, **tính mạch lạc của chunk**, **tính hữu dụng của metadata**, **chất lượng grounding** và **tác động của chiến lược dữ liệu**. Giải thích lựa chọn bằng kết quả, ví dụ lỗi và các đánh đổi.
+Code và thực nghiệm đã chạy; 6 tests đạt, kết quả tái lập đúng. Audit human chưa hoàn tất. Nhãn trong results/ai_review/ là đề xuất AI có lý do, không phải nhãn học viên đã chấm.
 
-## 3. Chuẩn bị bài nộp
+Đọc và điền results/baseline/audit_coherence.csv, audit_grounding.csv, audit_metadata.csv. Điền điểm, reason, reviewer; chỉ đặt status=human_reviewed sau khi tự kiểm chứng. Metadata dùng human_correct=0/1. Sau đó:
 
-1. Chạy pipeline và lưu cấu hình, kết quả top-3, trace cùng nhãn đánh giá thủ công.
-2. Điền [thông tin học viên](STUDENT.md), [nhật ký thí nghiệm](artifacts/experiment_log.csv) và bản sao [mẫu báo cáo cá nhân](report/individual/MSSV_HoTen.md).
-3. Kiểm tra mã nguồn, cách chạy, manifest dữ liệu và checklist trong [SUBMISSION.md](SUBMISSION.md).
+```powershell
+.\.venv\Scripts\python.exe -m starter.src.audit results/baseline
+```
 
-## Tài liệu hướng dẫn
-
-| Bạn cần tìm | Tài liệu |
-|---|---|
-| Setup baseline PostgreSQL + pgvector | [starter/README.md](starter/README.md) |
-| Các bước làm và cách tính chỉ số | [GUIDE.md](GUIDE.md) |
-| Tiến độ trong 4 giờ | [CHECKPOINTS.md](CHECKPOINTS.md) |
-| Năm tiêu chí benchmark và bộ câu hỏi | [BENCHMARK.md](BENCHMARK.md) |
-| Tiêu chí chấm điểm | [RUBRIC.md](RUBRIC.md) |
-| Quy tắc sử dụng dữ liệu, AI và API | [RULES.md](RULES.md) |
-| Cách nộp bài | [SUBMISSION.md](SUBMISSION.md) |
-
-[data/format-example.json](data/format-example.json) chỉ minh họa định dạng, không phải corpus đủ điều kiện. Phần xử lý và benchmark do bạn tự hiện thực; không bắt buộc xây chatbot.
+Cập nhật báo cáo bằng kết quả human, xác nhận STUDENT.md, commit bổ sung và nộp link theo lớp. Việc đẩy code lên GitHub không thay thế bước nộp link. Có ghi rõ AI hỗ trợ và các giới hạn.

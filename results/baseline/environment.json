@@ -1,0 +1,27 @@
+{
+  "python": "3.10.1",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "sentence-transformers": "3.4.1",
+    "transformers": "4.57.6",
+    "qdrant-client": "1.13.3",
+    "pypdf": "5.9.0",
+    "huggingface-hub": "0.35.3",
+    "numpy": "2.2.6"
+  },
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+  "dimensions": 384,
+  "device": "cpu",
+  "max_seq_length": 256,
+  "model_load_seconds": 11.822580399999424,
+  "embedding_processing": "Same model, mean pooling and L2 normalization for queries/documents; no prefixes; batch 32",
+  "store": "Qdrant local persistent",
+  "store_path": ".qdrant",
+  "metric": "cosine",
+  "search": "exact",
+  "api_cost_usd": 0,
+  "cost_scope": "No paid API calls; electricity/hardware/network excluded",
+  "human_audit": "pending"
+}

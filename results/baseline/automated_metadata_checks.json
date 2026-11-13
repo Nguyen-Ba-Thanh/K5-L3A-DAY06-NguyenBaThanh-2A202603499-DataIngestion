@@ -1,0 +1,50 @@
+[
+  {
+    "strategy": "A",
+    "split": "dev",
+    "source_matches": 15,
+    "records_checked_test_only": 15,
+    "filter_compliant": 3,
+    "filter_questions": 5
+  },
+  {
+    "strategy": "A",
+    "split": "test",
+    "source_matches": 15,
+    "records_checked_test_only": 15,
+    "filter_compliant": 1,
+    "filter_questions": 3
+  },
+  {
+    "strategy": "B",
+    "split": "dev",
+    "source_matches": 15,
+    "records_checked_test_only": 15,
+    "filter_compliant": 2,
+    "filter_questions": 5
+  },
+  {
+    "strategy": "B",
+    "split": "test",
+    "source_matches": 15,
+    "records_checked_test_only": 15,
+    "filter_compliant": 1,
+    "filter_questions": 3
+  },
+  {
+    "strategy": "C",
+    "split": "dev",
+    "source_matches": 15,
+    "records_checked_test_only": 15,
+    "filter_compliant": 5,
+    "filter_questions": 5
+  },
+  {
+    "strategy": "C",
+    "split": "test",
+    "source_matches": 15,
+    "records_checked_test_only": 15,
+    "filter_compliant": 3,
+    "filter_questions": 3
+  }
+]

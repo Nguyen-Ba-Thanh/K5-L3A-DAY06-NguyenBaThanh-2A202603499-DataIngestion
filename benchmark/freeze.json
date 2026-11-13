@@ -1,0 +1,10 @@
+{
+  "frozen_at": "2026-11-13T11:12:51.900270+00:00",
+  "questions_sha256": "bf5198f441d5a6d5bcb3313e900776ae0dc4fcd1a0bf60cc7aa431098a9e84d9",
+  "corpus_sha256": "95d8218dc03c2eac8a5c43c6ad305294530e1e49188bbc3bb5238d5db49b9826",
+  "config_sha256": "191eba3254ddc43ae3b4d9e30d7e4aba5ba84f3ccae68f747a0815fa7c4f36c9",
+  "split_rule": "q01-q15: chapters I-IX dev; q16-q20: chapters X-XII test. Same book/characters cause residual topic leakage.",
+  "selection": "Dev Hit@3 descending, then dev Hit@1 descending, then fewer chunks, then strategy name. Freeze before test. No test-driven tuning.",
+  "evidence_review": "Verbatim paragraphs verified by prepare script; question/answer drafted by Codex. Student human review pending.",
+  "coherence_sampling": "First 10 source-unit IDs, offset equal to half the text length; all chunks covering anchor. Chosen before retrieval."
+}

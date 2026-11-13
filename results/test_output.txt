@@ -1,0 +1,11 @@
+test_chunk_coverage_offsets_and_stability (test_pipeline.PipelineTests) ... ok
+test_frozen_corpus_and_benchmark (test_pipeline.PipelineTests) ... ok
+test_human_audit_rejects_ai_or_pending_labels (test_pipeline.PipelineTests) ... ok
+test_normalization_preserves_structure_and_unicode (test_pipeline.PipelineTests) ... ok
+test_persistent_snapshot_replaces_stale_chunks_and_filters (test_pipeline.PipelineTests) ... ok
+test_strict_hit_and_alternative_gold (test_pipeline.PipelineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.886s
+
+OK
