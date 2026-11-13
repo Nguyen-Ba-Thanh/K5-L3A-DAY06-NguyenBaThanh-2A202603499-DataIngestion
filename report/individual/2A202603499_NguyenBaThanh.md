@@ -101,12 +101,14 @@ Giới hạn: một sách tiếng Anh, không chứng minh tiếng Việt; ít c
 
 Cải tiến: học viên xác nhận gold/nhãn; khi sửa cấu hình phải tạo test mới chưa xem; chia theo tokenizer; thêm nguồn/ngôn ngữ, điều kiện và multi-evidence; đo timing lặp/warm-up; thử hybrid trên dev rồi đánh giá holdout mới.
 
-## Tái lập, AI và việc còn lại
+## Cách kiểm tra và công cụ hỗ trợ
 
-Codex được sử dụng để hỗ trợ viết code, soạn benchmark trước khi chạy truy xuất và phân tích kết quả. Cách kiểm tra gồm đối chiếu hash, kiểm tra đoạn trích với nguồn, chạy sáu tests và kiểm tra dữ liệu sau khi nạp lại, đóng rồi mở kho. Lần chạy lại cho cùng sáu dòng chỉ số và cùng thứ tự ID top-3, nhãn evidence hit của 60 lượt truy vấn. Nhãn do công cụ đề xuất được tách khỏi bảng dành cho học viên chấm. [Verification](../../results/verification.json).
+Codex được sử dụng để hỗ trợ viết code, soạn benchmark trước khi chạy truy xuất và phân tích kết quả. Cách kiểm tra gồm đối chiếu hash, kiểm tra đoạn trích với nguồn, chạy sáu tests và kiểm tra dữ liệu sau khi nạp lại, đóng rồi mở kho. Lần chạy lại cho cùng sáu dòng chỉ số và cùng thứ tự ID top-3, nhãn evidence hit của 60 lượt truy vấn. Nhãn do công cụ đề xuất được nhận diện bằng reviewer và status trong từng bảng; xác nhận của học viên vẫn được giữ riêng. [Verification](../../results/verification.json).
 
 Sau test chỉ bỏ định nghĩa code trùng, thêm tài liệu/tests/audit và sửa mã hóa UTF-8; không chỉnh model, corpus, cấu hình hay benchmark.
 
 Học viên cần xác nhận thông tin, tự chấm các bảng human, chạy python -m starter.src.audit results/baseline, cập nhật kết quả human, commit bổ sung nhãn và nộp link theo lớp. Không coi việc push GitHub là đã nộp trên kênh giảng viên.
 
-K?t qu? r? so?t b? sung: 67 ??n v? ?? ???c d?ng l?i t? b?n g?c v? ??i chi?u ??ng theo v? tr?; 20 ?o?n gold v? 45 b?n ghi metadata test ??u kh?p ngu?n. Nh?n x?t t?ng c?u v? gi?i h?n c?a gold ???c ghi trong [bi?n b?n r? so?t](../../results/ai_review/REVIEW.md).
+Kết quả rà soát bổ sung: 67 đơn vị đã được dựng lại từ bản gốc và đối chiếu đúng theo vị trí; 20 đoạn gold và 45 bản ghi metadata test đều khớp nguồn. Nhận xét từng câu và giới hạn của gold được ghi trong [biên bản rà soát](../../results/ai_review/REVIEW.md).
+
+Ngày 14/11/2026, Codex đã đọc lại các mẫu và điền nhận xét tiếng Việt cho đủ 31 hàng coherence, 15 hàng grounding và 45 hàng metadata trong các bảng baseline. Điểm coherence và grounding giữ nguyên sau khi đọc lại. Metadata có lý do đối chiếu theo từng vị trí nguồn; cột human_correct chờ học viên xác nhận. [Tổng hợp nhãn đã điền](../../results/ai_review/annotated_audit_summary.json).

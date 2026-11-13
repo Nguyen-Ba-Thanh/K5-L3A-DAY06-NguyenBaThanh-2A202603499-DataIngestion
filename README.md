@@ -39,7 +39,7 @@ Mỗi lần chạy tạo results/runs/<timestamp>/ và cập nhật results/late
 
 Code và thực nghiệm đã chạy; 6 tests đạt, kết quả tái lập đúng. Audit human chưa hoàn tất. Nhãn trong results/ai_review/ là đề xuất AI có lý do, không phải nhãn học viên đã chấm.
 
-Đọc và điền results/baseline/audit_coherence.csv, audit_grounding.csv, audit_metadata.csv. Điền điểm, reason, reviewer; chỉ đặt status=human_reviewed sau khi tự kiểm chứng. Metadata dùng human_correct=0/1. Sau đó:
+Các bảng results/baseline/audit_coherence.csv, audit_grounding.csv và audit_metadata.csv đã có nhận xét của Codex để đối chiếu. Đọc nguồn, xác nhận hoặc sửa điểm và lý do, ghi tên người chấm; chỉ đặt status=human_reviewed sau khi tự kiểm chứng. Metadata dùng human_correct=0/1. Sau đó:
 
 ```powershell
 .\.venv\Scripts\python.exe -m starter.src.audit results/baseline

@@ -1,0 +1,52 @@
+{
+  "reviewed_at": "2026-11-13T17:02:22.587545+00:00",
+  "reviewer": "Codex (AI)",
+  "status": "ai_reviewed_pending_student",
+  "human_validation": false,
+  "metadata_method": "Source and offset comparison; human_correct left for human confirmation",
+  "trace_sha256": "d62b836aeb247761ceaca3810c26b8d02849abace228a629d3c34f5e6222a747",
+  "strategies": {
+    "A": {
+      "coherence_positions": 10,
+      "coherence_chunks": 11,
+      "coherence_mean": 1.0,
+      "grounding_n": 5,
+      "grounding_counts": {
+        "0": 2,
+        "1": 1,
+        "2": 2
+      },
+      "grounding_mean": 1.0,
+      "metadata_records_verified": 15,
+      "metadata_human_confirmed": 0
+    },
+    "B": {
+      "coherence_positions": 10,
+      "coherence_chunks": 10,
+      "coherence_mean": 1.6,
+      "grounding_n": 5,
+      "grounding_counts": {
+        "0": 0,
+        "1": 1,
+        "2": 4
+      },
+      "grounding_mean": 1.8,
+      "metadata_records_verified": 15,
+      "metadata_human_confirmed": 0
+    },
+    "C": {
+      "coherence_positions": 10,
+      "coherence_chunks": 10,
+      "coherence_mean": 1.6,
+      "grounding_n": 5,
+      "grounding_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 5
+      },
+      "grounding_mean": 2.0,
+      "metadata_records_verified": 15,
+      "metadata_human_confirmed": 0
+    }
+  }
+}
