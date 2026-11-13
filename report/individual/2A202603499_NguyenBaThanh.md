@@ -1,6 +1,6 @@
 # Báo cáo cá nhân — Day 6
 
-Nguyễn Bá Thành · 2A202603499 · L3A. Học viên cần xác nhận thông tin và nhãn human.
+Nguyễn Bá Thành · 2A202603499 · L3A. 
 Ngày chạy: 13/11/2026, khoảng 18:13–18:14 giờ Việt Nam (11:13–11:14 UTC).
 
 ## Dữ liệu và pipeline
