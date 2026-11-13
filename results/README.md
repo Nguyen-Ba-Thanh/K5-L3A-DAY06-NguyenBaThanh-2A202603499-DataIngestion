@@ -9,3 +9,5 @@ Coherence: 10 unit đầu, anchor giữa unit; A có 11 chunk do overlap ở uni
 Chạy mới tạo results/runs/<UTC timestamp>/, không ghi đè baseline hay nhãn. latest.json mặc định trỏ baseline trong bản nộp; khi chạy sẽ trỏ run mới tại máy. runs không commit. Lỗi tạo errors.log/failure.json, không fallback vector giả.
 
 test_output.txt lưu 6 tests đạt. verification.json ghi so sánh lần chạy lại: 6 dòng metric và ID top-3/evidence hit của cả 60 trace giống baseline.
+
+Xem th?m [bi?n b?n r? so?t ngu?n v? ??p ?n](ai_review/REVIEW.md), g?m nh?n x?t ?? 20 c?u v? ?nh h??ng c?a ?? d?i gold ??n c?u h?nh A.
