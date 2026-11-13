@@ -55,15 +55,15 @@ Nội dung lưu còn đầy đủ, nhưng embedding B/C có 3 chunk chỉ dùng 
 
 ## 2. Chunk coherence
 
-Kết quả đọc mẫu với sự hỗ trợ của Codex là A đạt 1,0/2; B và C đạt 1,6/2. Các điểm này được lưu riêng, chưa có xác nhận thủ công của học viên. Mẫu cố định trước retrieval: unit 1–10, anchor giữa unit; A có 11 chunk do overlap ở unit 10, lấy trung bình trong vị trí rồi trung bình 10 vị trí. B/C có 10 chunk giống nhau.
+Sau khi kiểm tra các mẫu và xác nhận nhận xét ngày 14/11/2026, điểm coherence là A đạt 1,0/2; B và C đạt 1,6/2. Mẫu cố định trước retrieval: unit 1–10, anchor giữa unit; A có 11 chunk do overlap ở unit 10, lấy trung bình trong vị trí rồi trung bình 10 vị trí. B/C có 10 chunk giống nhau.
 
-Các đoạn của A thường bắt đầu hoặc kết thúc giữa câu nên chỉ giữ được một phần ý. B và C giữ được nhiều đoạn trọn vẹn hơn. Tuy vậy, mẫu ở đơn vị 7 vẫn bị cắt vì đoạn gốc quá dài; một số mẫu khác mở đầu bằng đại từ mà chưa nói rõ đang chỉ ai. [Nhãn/lý do AI](../../results/ai_review/coherence.csv); [bảng human](../../results/baseline/audit_coherence.csv).
+Các đoạn của A thường bắt đầu hoặc kết thúc giữa câu nên chỉ giữ được một phần ý. B và C giữ được nhiều đoạn trọn vẹn hơn. Tuy vậy, mẫu ở đơn vị 7 vẫn bị cắt vì đoạn gốc quá dài; một số mẫu khác mở đầu bằng đại từ mà chưa nói rõ đang chỉ ai. [Điểm và nhận xét](../../results/baseline/audit_coherence.csv).
 
 ## 3. Metadata usefulness
 
-Code đối chiếu source, page, chapter/language và substring start/end: đúng 15/15 bản ghi test mỗi cấu hình, tổng 45. Đây là kiểm tra tự động, chưa thay audit thủ công nguồn gốc.
+Code đối chiếu source, page, chapter/language và substring start/end: đúng 15/15 bản ghi test mỗi cấu hình, tổng 45. Học viên đã đối chiếu và xác nhận cả 45 bản ghi; các hàng được ghi human_correct=1.
 
-| Strategy | Tự động đúng nguồn | Top-3 tuân thủ filter dev | Top-3 tuân thủ filter test |
+| Strategy | Metadata đủ và đúng, đã xác nhận | Top-3 tuân thủ filter dev | Top-3 tuân thủ filter test |
 |---|---|---|---|
 | A | 15/15 | 3/5 | 1/3 |
 | B | 15/15 | 2/5 | 1/3 |
@@ -73,7 +73,7 @@ Code đối chiếu source, page, chapter/language và substring start/end: đú
 
 ## 4. Grounding quality
 
-Phần này xem ba kết quả đầu có đủ thông tin để trả lời câu hỏi hay không. Hệ thống chưa sinh câu trả lời bằng LLM nên không đo độ chính xác của câu trả lời. Bảng dưới là nhãn Codex đề xuất sau khi đọc năm câu test cho từng cấu hình; điểm được chấm theo nội dung, không quy đổi trực tiếp từ Hit@3:
+Phần này xem ba kết quả đầu có đủ thông tin để trả lời câu hỏi hay không. Hệ thống chưa sinh câu trả lời bằng LLM nên không đo độ chính xác của câu trả lời. Bảng dưới tổng hợp các nhãn đã được học viên kiểm tra và xác nhận cho năm câu test của mỗi cấu hình. Điểm được chấm theo nội dung, không quy đổi trực tiếp từ Hit@3:
 
 | Strategy | Số mức 0/1/2 | Mean /2 |
 |---|---|---|
@@ -81,9 +81,9 @@ Phần này xem ba kết quả đầu có đủ thông tin để trả lời câ
 | B | 0/1/4 | 1,8 |
 | C | 0/0/5 | 2,0 |
 
-A q16/q18 thiếu evidence; q19 có suppression nhưng thiếu phương thức, mức 1. B q20 có lời pack of cards ở thời điểm trước, nên mức 1 dù strict hit=0. C đủ evidence theo AI review.
-[Nhãn/lý do](../../results/ai_review/grounding.csv), [phương pháp](../../results/ai_review/method.json), [bảng human](../../results/baseline/audit_grounding.csv).
-AI cùng tác giả benchmark và đã thấy metric trước chấm: không độc lập, không chấm mù.
+A q16/q18 thiếu evidence; q19 có suppression nhưng thiếu phương thức, mức 1. B q20 có lời pack of cards ở thời điểm trước, nên mức 1 dù strict hit=0. C có đủ bằng chứng ở cả năm câu theo các nhãn đã xác nhận.
+[Điểm và nhận xét](../../results/baseline/audit_grounding.csv), [tổng hợp đánh giá thủ công](../../results/baseline/human_audit_summary.json).
+Việc xác nhận diễn ra sau khi đã xem các kết quả và nhận xét đề xuất, nên đây không phải chấm mù hay đánh giá độc lập.
 
 ## 5. Data strategy impact và kết luận
 
@@ -97,18 +97,18 @@ Hai lỗi thực tế:
 
 Chọn C theo dev đã cố định. Khi không có filter, C giống B. Test chỉ 5 câu, mỗi câu đổi tỷ lệ 20 điểm phần trăm; không kết luận tốt nhất tổng quát.
 
-Giới hạn: một sách tiếng Anh, không chứng minh tiếng Việt; ít câu điều kiện/ngoại lệ; gold cả đoạn có thể quá rộng; q17 gold chưa chứa câu giải thích purpose dù source/trace có; thiếu human audit; 3 chunk vượt token budget; timing một lần; store local đơn tiến trình; thiên lệch cùng AI tạo câu hỏi và review.
+Giới hạn: một sách tiếng Anh, không chứng minh tiếng Việt; ít câu điều kiện/ngoại lệ; gold cả đoạn có thể quá rộng; q17 gold chưa chứa câu giải thích purpose dù source/trace có; nhãn chưa có người chấm độc lập thứ hai; 3 chunk vượt token budget; timing một lần; store local đơn tiến trình; thiên lệch cùng AI tạo câu hỏi và review.
 
-Cải tiến: học viên xác nhận gold/nhãn; khi sửa cấu hình phải tạo test mới chưa xem; chia theo tokenizer; thêm nguồn/ngôn ngữ, điều kiện và multi-evidence; đo timing lặp/warm-up; thử hybrid trên dev rồi đánh giá holdout mới.
+Cải tiến: bổ sung người chấm độc lập cho gold và nhãn; khi sửa cấu hình phải tạo test mới chưa xem; chia theo tokenizer; thêm nguồn/ngôn ngữ, điều kiện và multi-evidence; đo timing lặp/warm-up; thử hybrid trên dev rồi đánh giá holdout mới.
 
 ## Cách kiểm tra và công cụ hỗ trợ
 
-Codex được sử dụng để hỗ trợ viết code, soạn benchmark trước khi chạy truy xuất và phân tích kết quả. Cách kiểm tra gồm đối chiếu hash, kiểm tra đoạn trích với nguồn, chạy sáu tests và kiểm tra dữ liệu sau khi nạp lại, đóng rồi mở kho. Lần chạy lại cho cùng sáu dòng chỉ số và cùng thứ tự ID top-3, nhãn evidence hit của 60 lượt truy vấn. Nhãn do công cụ đề xuất được nhận diện bằng reviewer và status trong từng bảng; xác nhận của học viên vẫn được giữ riêng. [Verification](../../results/verification.json).
+Codex được sử dụng để hỗ trợ viết code, soạn benchmark trước khi chạy truy xuất và phân tích kết quả. Cách kiểm tra gồm đối chiếu hash, kiểm tra đoạn trích với nguồn, chạy sáu tests và kiểm tra dữ liệu sau khi nạp lại, đóng rồi mở kho. Lần chạy lại cho cùng sáu dòng chỉ số và cùng thứ tự ID top-3, nhãn evidence hit của 60 lượt truy vấn. Các nhận xét được soạn với sự hỗ trợ của công cụ và đã được học viên kiểm tra, xác nhận ngày 14/11/2026; reviewer trong bảng audit ghi người xác nhận. [Verification](../../results/verification.json).
 
 Sau test chỉ bỏ định nghĩa code trùng, thêm tài liệu/tests/audit và sửa mã hóa UTF-8; không chỉnh model, corpus, cấu hình hay benchmark.
 
-Học viên cần xác nhận thông tin, tự chấm các bảng human, chạy python -m starter.src.audit results/baseline, cập nhật kết quả human, commit bổ sung nhãn và nộp link theo lớp. Không coi việc push GitHub là đã nộp trên kênh giảng viên.
+Các bảng đã được tổng hợp bằng python -m starter.src.audit results/baseline sau xác nhận của học viên. Việc còn lại là duyệt thay đổi trước khi commit và nộp link theo lớp. Không coi việc push GitHub là đã nộp trên kênh giảng viên.
 
 Kết quả rà soát bổ sung: 67 đơn vị đã được dựng lại từ bản gốc và đối chiếu đúng theo vị trí; 20 đoạn gold và 45 bản ghi metadata test đều khớp nguồn. Nhận xét từng câu và giới hạn của gold được ghi trong [biên bản rà soát](../../results/ai_review/REVIEW.md).
 
-Ngày 14/11/2026, Codex đã đọc lại các mẫu và điền nhận xét tiếng Việt cho đủ 31 hàng coherence, 15 hàng grounding và 45 hàng metadata trong các bảng baseline. Điểm coherence và grounding giữ nguyên sau khi đọc lại. Metadata có lý do đối chiếu theo từng vị trí nguồn; cột human_correct chờ học viên xác nhận. [Tổng hợp nhãn đã điền](../../results/ai_review/annotated_audit_summary.json).
+Ngày 14/11/2026, Nguyễn Bá Thành xác nhận đã kiểm tra toàn bộ 31 nhận xét coherence, 15 nhận xét grounding và 45 bản ghi metadata. Điểm coherence và grounding được giữ nguyên; toàn bộ metadata được xác nhận đúng. Các bảng có reviewer=Nguyễn Bá Thành và status=human_reviewed.

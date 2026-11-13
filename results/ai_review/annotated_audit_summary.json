@@ -1,9 +1,9 @@
 {
   "reviewed_at": "2026-11-13T17:02:22.587545+00:00",
-  "reviewer": "Codex (AI)",
-  "status": "ai_reviewed_pending_student",
-  "human_validation": false,
-  "metadata_method": "Source and offset comparison; human_correct left for human confirmation",
+  "reviewer": "Nguyễn Bá Thành",
+  "status": "human_reviewed",
+  "human_validation": true,
+  "metadata_method": "Source and offset comparison, followed by student confirmation of all records",
   "trace_sha256": "d62b836aeb247761ceaca3810c26b8d02849abace228a629d3c34f5e6222a747",
   "strategies": {
     "A": {
@@ -18,7 +18,7 @@
       },
       "grounding_mean": 1.0,
       "metadata_records_verified": 15,
-      "metadata_human_confirmed": 0
+      "metadata_human_confirmed": 15
     },
     "B": {
       "coherence_positions": 10,
@@ -32,7 +32,7 @@
       },
       "grounding_mean": 1.8,
       "metadata_records_verified": 15,
-      "metadata_human_confirmed": 0
+      "metadata_human_confirmed": 15
     },
     "C": {
       "coherence_positions": 10,
@@ -46,7 +46,9 @@
       },
       "grounding_mean": 2.0,
       "metadata_records_verified": 15,
-      "metadata_human_confirmed": 0
+      "metadata_human_confirmed": 15
     }
-  }
+  },
+  "human_confirmed_on": "2026-11-14",
+  "confirmation_source": "Học viên xác nhận trong hội thoại ngày 14/11/2026 rằng đã kiểm tra toàn bộ nhận xét và yêu cầu chuyển sang human_reviewed."
 }

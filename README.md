@@ -35,14 +35,14 @@ Cùng model all-MiniLM-L6-v2, cosine exact search và top-3. Chọn C theo dev t
 
 Mỗi lần chạy tạo results/runs/<timestamp>/ và cập nhật results/latest.json; baseline/ lưu lần chạy đầu để nộp. Model cache, .venv và .qdrant không commit. Kho vector được dựng lại khi chạy pipeline. Nạp lại thay toàn bộ snapshot, loại chunk cũ; đã kiểm tra count và mở lại kho. Thay snapshot không crash-atomic: nếu gián đoạn, chạy lại ingest. Lỗi có errors.log/failure.json, không fallback vector giả.
 
-## Việc học viên cần hoàn tất
+## Trạng thái bài nộp
 
-Code và thực nghiệm đã chạy; 6 tests đạt, kết quả tái lập đúng. Audit human chưa hoàn tất. Nhãn trong results/ai_review/ là đề xuất AI có lý do, không phải nhãn học viên đã chấm.
+Code và thực nghiệm đã chạy; 6 tests đạt, kết quả tái lập đúng. Ngày 14/11/2026, Nguyễn Bá Thành xác nhận đã kiểm tra toàn bộ nhận xét. Ba bảng audit hiện có reviewer=Nguyễn Bá Thành, status=human_reviewed; 45 bản ghi metadata có human_correct=1.
 
-Các bảng results/baseline/audit_coherence.csv, audit_grounding.csv và audit_metadata.csv đã có nhận xét của Codex để đối chiếu. Đọc nguồn, xác nhận hoặc sửa điểm và lý do, ghi tên người chấm; chỉ đặt status=human_reviewed sau khi tự kiểm chứng. Metadata dùng human_correct=0/1. Sau đó:
+[Tổng hợp đánh giá thủ công](results/baseline/human_audit_summary.json). Có thể tính lại bằng:
 
 ```powershell
 .\.venv\Scripts\python.exe -m starter.src.audit results/baseline
 ```
 
-Cập nhật báo cáo bằng kết quả human, xác nhận STUDENT.md, commit bổ sung và nộp link theo lớp. Việc đẩy code lên GitHub không thay thế bước nộp link. Có ghi rõ AI hỗ trợ và các giới hạn.
+Bài vẫn giữ phần khai báo công cụ hỗ trợ và giới hạn phương pháp trong báo cáo. Việc đẩy code lên GitHub không thay thế bước nộp link theo hướng dẫn lớp. Mỗi lần commit phải được người dùng xác nhận trước.

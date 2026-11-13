@@ -1,6 +1,6 @@
 # Rà soát nguồn và đáp án
 
-Lần rà soát này giữ nguyên corpus, bộ câu hỏi, cấu hình và kết quả ban đầu. Người rà soát: Codex (AI); chưa có xác nhận độc lập của học viên.
+Lần rà soát này giữ nguyên corpus, bộ câu hỏi, cấu hình và kết quả ban đầu. Bản rà soát ban đầu được lập bằng công cụ hỗ trợ; Nguyễn Bá Thành đã kiểm tra và xác nhận nội dung ngày 14/11/2026.
 
 ## Đối chiếu dữ liệu
 

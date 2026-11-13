@@ -1,0 +1,80 @@
+{
+  "coherence": {
+    "A": {
+      "source_locations": 10,
+      "chunks": 11,
+      "mean": 1.0
+    },
+    "B": {
+      "source_locations": 10,
+      "chunks": 10,
+      "mean": 1.6
+    },
+    "C": {
+      "source_locations": 10,
+      "chunks": 10,
+      "mean": 1.6
+    }
+  },
+  "grounding": {
+    "A": {
+      "n": 5,
+      "sum": 5,
+      "mean": 1.0,
+      "counts": {
+        "0": 2,
+        "1": 1,
+        "2": 2
+      }
+    },
+    "B": {
+      "n": 5,
+      "sum": 9,
+      "mean": 1.8,
+      "counts": {
+        "0": 0,
+        "1": 1,
+        "2": 4
+      }
+    },
+    "C": {
+      "n": 5,
+      "sum": 10,
+      "mean": 2.0,
+      "counts": {
+        "0": 0,
+        "1": 0,
+        "2": 5
+      }
+    }
+  },
+  "metadata": {
+    "A": {
+      "n": 15,
+      "sum": 15,
+      "mean": 1.0,
+      "counts": {
+        "0": 0,
+        "1": 15
+      }
+    },
+    "B": {
+      "n": 15,
+      "sum": 15,
+      "mean": 1.0,
+      "counts": {
+        "0": 0,
+        "1": 15
+      }
+    },
+    "C": {
+      "n": 15,
+      "sum": 15,
+      "mean": 1.0,
+      "counts": {
+        "0": 0,
+        "1": 15
+      }
+    }
+  }
+}

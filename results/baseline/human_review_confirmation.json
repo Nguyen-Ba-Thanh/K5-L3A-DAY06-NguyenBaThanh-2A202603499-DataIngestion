@@ -1,0 +1,10 @@
+{
+  "reviewer": "Nguyễn Bá Thành",
+  "status": "human_reviewed",
+  "confirmed_on": "2026-11-14",
+  "confirmation_source": "Học viên xác nhận trong hội thoại ngày 14/11/2026 rằng đã kiểm tra toàn bộ nhận xét và yêu cầu chuyển sang human_reviewed.",
+  "coherence_rows": 31,
+  "grounding_rows": 15,
+  "metadata_rows": 45,
+  "scores_changed": false
+}

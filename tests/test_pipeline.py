@@ -79,8 +79,28 @@ class PipelineTests(unittest.TestCase):
 
     def test_human_audit_rejects_ai_or_pending_labels(self):
         from starter.src.audit import summarize_human
-        with self.assertRaises(ValueError):
-            summarize_human(ROOT / "results/baseline")
+        import csv
+        # Synthetic fixtures keep this guard independent of completed review data.
+        with tempfile.TemporaryDirectory() as directory:
+            for kind, field in [("coherence", "score_0_2"), ("grounding", "score_0_2"), ("metadata", "human_correct")]:
+                row = {"strategy": "A", "page": "1", "anchor": "10", field: "1",
+                       "reason": "Fixture review", "reviewer": "Test reviewer", "status": "human_reviewed"}
+                with (Path(directory) / f"audit_{kind}.csv").open("w", encoding="utf-8", newline="") as stream:
+                    writer = csv.DictWriter(stream, fieldnames=list(row))
+                    writer.writeheader()
+                    writer.writerow(row)
+            complete = summarize_human(directory)
+            self.assertEqual(complete["metadata"]["A"]["sum"], 1)
+            for status in ("pending_human", "ai_reviewed_pending_student"):
+                path = Path(directory) / "audit_coherence.csv"
+                row = {"strategy": "A", "page": "1", "anchor": "10", "score_0_2": "1",
+                       "reason": "Fixture review", "reviewer": "Test reviewer", "status": status}
+                with path.open("w", encoding="utf-8", newline="") as stream:
+                    writer = csv.DictWriter(stream, fieldnames=list(row))
+                    writer.writeheader()
+                    writer.writerow(row)
+                with self.subTest(status=status), self.assertRaises(ValueError):
+                    summarize_human(directory)
 
 
 if __name__ == "__main__":

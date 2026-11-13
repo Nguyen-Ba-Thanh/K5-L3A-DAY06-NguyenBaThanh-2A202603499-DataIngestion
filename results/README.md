@@ -2,7 +2,7 @@
 
 baseline/ lưu lần chạy đầu 13/11/2026: 60 lượt truy vấn × top-3, metrics dev/test, chunks, tài nguyên, môi trường, lựa chọn trên dev và log. Model thật 384 chiều, Qdrant persistent, exact cosine, API cost 0 USD.
 
-Các bảng baseline/audit_*.csv đã được điền điểm và nhận xét tiếng Việt bởi Codex, với reviewer=Codex (AI), status=ai_reviewed_pending_student. Cột human_correct vẫn để dành cho học viên xác nhận. Đây chưa phải nhãn do học viên chấm độc lập. AI đã thấy metric, nên không phải chấm mù; coherence và grounding được đánh giá theo nội dung, không suy từ exact hit.
+Các bảng baseline/audit_*.csv đã được Nguyễn Bá Thành xác nhận ngày 14/11/2026. Cả 91 hàng có status=human_reviewed; 31 hàng coherence và 15 hàng grounding có điểm và lý do, 45 hàng metadata có human_correct=1. [Kết quả tổng hợp](baseline/human_audit_summary.json). Các bản đề xuất trước xác nhận được giữ trong ai_review/ để truy vết quá trình; không phải một lượt chấm độc lập khác.
 
 Coherence: 10 unit đầu, anchor giữa unit; A có 11 chunk do overlap ở unit 10, lấy trung bình trong vị trí rồi trung bình 10 vị trí. B/C có 10 chunk giống nhau. Grounding: 5 test × 3 cấu hình. Metadata: code đối chiếu 45 bản ghi test với nguồn, tách khỏi xác nhận thủ công.
 
