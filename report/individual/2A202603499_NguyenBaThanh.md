@@ -109,6 +109,6 @@ Sau test chỉ bỏ định nghĩa code trùng, thêm tài liệu/tests/audit v�
 
 Các bảng đã được tổng hợp bằng python -m starter.src.audit results/baseline sau xác nhận của học viên. Việc còn lại là duyệt thay đổi trước khi commit và nộp link theo lớp. Không coi việc push GitHub là đã nộp trên kênh giảng viên.
 
-Kết quả rà soát bổ sung: 67 đơn vị đã được dựng lại từ bản gốc và đối chiếu đúng theo vị trí; 20 đoạn gold và 45 bản ghi metadata test đều khớp nguồn. Nhận xét từng câu và giới hạn của gold được ghi trong [biên bản rà soát](../../results/ai_review/REVIEW.md).
+Kết quả rà soát bổ sung: 67 đơn vị đã được dựng lại từ bản gốc và đối chiếu đúng theo vị trí; 20 đoạn gold và 45 bản ghi metadata test đều khớp nguồn. Nhận xét từng câu và giới hạn của gold được ghi trong [biên bản rà soát](../../results/baseline/evidence_review.md).
 
 Ngày 14/11/2026, Nguyễn Bá Thành xác nhận đã kiểm tra toàn bộ 31 nhận xét coherence, 15 nhận xét grounding và 45 bản ghi metadata. Điểm coherence và grounding được giữ nguyên; toàn bộ metadata được xác nhận đúng. Các bảng có reviewer=Nguyễn Bá Thành và status=human_reviewed.

@@ -11,3 +11,6 @@ __pycache__/
 .cache/
 .qdrant/
 results/runs/
+
+# Local assistant instructions are not part of the lab submission.
+/AGENTS.md
